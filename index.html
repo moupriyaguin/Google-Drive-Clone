@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,1,0" />
+    <link rel="stylesheet" href="style1.css" />
+    <title>Google Drive</title>
+  </head>
+  <body>
+    <div class="navbar-fixed" >
+      <nav class="nav-extended white">
+        <div class="nav-wrapper white">
+          <ul>
+            <li>
+              
+              <a href="#!" class="title grey-text text-darken-1"
+                ><img src="logo.png" alt="Logo" class="logo">  Drive
+              </a>
+              
+            </li>
+          </ul>
+          <div class="search-wrapper">
+            <i class="material-symbols-outlined">search</i>
+            <input type="search" placeholder="Search in Drive" />
+            <i class="material-symbols-outlined" id="tune">tune</i>
+          </div>
+          
+          <ul class="right">
+            <li>
+              <a href="#!"><i class="material-symbols-outlined" id="help">help_outline</i></a>
+            </li>
+            <li>
+              <a href="#!"><i class="material-symbols-outlined" id="settings">settings</i></a>
+            </li>
+            <li>
+              <a href="#!"><i class="material-symbols-outlined" id="apps">apps</i></a>
+            </li>
+              <img src="profile pic.jpg" alt="Clickable Image" id="profile">
+          </ul>
+        </div>
+        <ul id="floating_list">
+          <ul id="first-section" class="section">
+            <a href="#" class="dropdown-list"><span class="material-symbols-outlined" id="left">create_new_folder</span>New folder</a>
+        
+          </ul>
+          <ul id="second-section" class="section">
+            <a href="#" class="dropdown-list"><span class="material-symbols-outlined" id="left">upload_file</span>File upload</a>
+            <a href="#" class="dropdown-list"><span class="material-symbols-outlined" id="left">drive_folder_upload</span>Folder upload</a>
+          </ul>
+          <ul id="third-section" class="section">
+            <a href="#" class="dropdown-list"><img src="google docs.png" id="left" style="width: 20px;height:20px;margin-right: 8px;margin-left: 1px;">Google Docs<span class="material-symbols-outlined" id="right">arrow_right</span></a>
+            
+
+            <a href="#" class="dropdown-list"><img src="google sheets.png" id="left" style="width: 20px;height:20px;margin-right: 8px;margin-left: 1px;">Googles Sheets<span class="material-symbols-outlined" id="right">arrow_right</span></a>
+            
+
+            <a href="#" class="dropdown-list"><img src="google slides.png" id="left" style="width: 20px;height:20px;margin-right: 8px;margin-left: 1px;">Google Slides<span class="material-symbols-outlined" id="right">arrow_right</span></a>
+            
+
+            <a href="#" class="dropdown-list"><img src="google forms.png" id="left" style="width: 20px;height:20px;margin-right: 8px;margin-left: 1px;">Google Forms<span class="material-symbols-outlined" id="right">arrow_right</span></a>
+            
+          </ul>
+          <ul id="fourth-section">
+            <a href="#" class="dropdown-list">More<span class="material-symbols-outlined" style="margin-left: auto;">arrow_right</span></a>
+          </ul>
+        </ul>
+        <div class="nav-wrapper nav-2">
+          <ul>
+            <li class="dropdown">
+              <a href="#!" class="new-button" onclick="myFunction(event)">
+              <span class="material-symbols-outlined symbol">add</span> New 
+              </a>
+              
+            </li>
+            
+          </ul>
+          
+          <ul class="right">
+            
+            <li>
+              <a href="#!"><span class="material-symbols-outlined" id="info">
+                info
+                </span></a
+              >
+            </li>
+            
+          </ul>
+
+        </div>
+        
+      </nav>
+    </div>
+    <div class="dragger">
+      <div class="dragger-handle"></div>
+    </div>
+    <ul class="side-nav fixed floating transparent z-depth-0">
+      <li class="active">
+        <a href="#" class="homeclass" id="homeid"><span class="material-symbols-outlined">home</span>Home</a>
+      </li>
+      <li>
+        <a href="#" class="dropdown-toggle">
+          <i class="material-icons arrow">arrow_drop_down</i>
+          <i class="material-symbols-outlined dev">computer</i>My Drive
+        </a>
+      </li>
+      <li>
+        <a href="#" class="dropdown-toggle">
+          <i class="material-icons arrow">arrow_drop_down</i>
+          <i class="material-symbols-outlined dev">devices</i>Computers
+        </a>
+      </li>
+      
+      <li>
+        <a href="#" class="others"><span class="material-symbols-outlined">group</span>Shared with me</a>
+      </li>
+      <li>
+        <a href="#" class="others"><span class="material-symbols-outlined">schedule</span>Recent</a>
+      </li>
+      
+      <li>
+        <a href="#" class="others"><span class="material-symbols-outlined">star</span>Starred</a>
+      </li>
+      <li>
+        <a href="#" class="others"><span class="material-symbols-outlined">report</span>Spam</a>
+      </li>
+      <li>
+        <a href="#" class="others"><span class="material-symbols-outlined">delete</span>Bin</a>
+      </li>
+      <li class="storage">
+        <a href="#" class="others"><span class="material-symbols-outlined">cloud</span>Storage (77% full)</a>
+      </li>
+      <p style="font-size: 14px; margin-left: 20px;font-weight: 400;">11.6 GB OF 15 GB used</p>
+      <button class="storageclass">Get more storage</button>
+      
+    </ul>
+    
+  
+    <div class="main">
+      <p>Welcome to Drive</p>
+      <div class="suggested-container">
+        <p style="font-size: 16px;">Suggested</p>
+        <button id="file_folder">
+          <div class="left-text">
+            <span class="material-symbols-outlined">check</span>
+            <p>Files</p>
+          </div>
+          <div class="right-text">
+            <span class="material-symbols-outlined">folder</span>
+            <p>Folder</p>
+          </div>
+        </button>
+        <button id="view">
+          <div class="left-text">
+            <span class="material-symbols-outlined" id="checked">check</span>
+            <span class="material-symbols-outlined">dehaze</span>
+          </div>
+          <div class="right-text">
+            <span class="material-symbols-outlined"id="unchecked">check</span>
+            <span class="material-symbols-outlined">grid_view</span>
+          </div>
+        </button>
+      </div>
+      <div class="detailsRow">
+        <p>Name</p>
+        <p>File Size</p>
+        <p>Owner</p>
+        <p>Last modified</p>
+        <p>Download</p>
+      </div>
+      <div id="file-list"></div>
+      <input type="file" id="fileInput" style="display: none;" onchange="getFile(event)">
+    </div>
+    <script src="data.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+    <script src="firebase.js" ></script>
+  </body>
+  
+</html>
