@@ -23,6 +23,11 @@
     <title>Google Drive</title>
   </head>
   <body>
+    <div id="login-container" class="container">
+      <h3>Login to Google Drive</h3>
+      <button id="login-button" class="btn">Login</button>
+    </div>
+    <div id="main-content" style="display:none;">
     <div class="navbar-fixed" >
       <nav class="nav-extended white">
         <div class="nav-wrapper white">
@@ -177,18 +182,21 @@
         </button>
       </div>
       <div class="detailsRow">
-        <p>Name</p>
-        <p>File Size</p>
-        <p>Owner</p>
-        <p>Last modified</p>
-        <p>Download</p>
+        <li>
+          <p>Name</p>
+          <p>File Size</p>
+          <p>Owner</p>
+          <p>Last modified</p>
+          <p>Download</p>
+        </li>
       </div>
       <div id="file-list"></div>
       <input type="file" id="fileInput" style="display: none;" onchange="getFile(event)">
     </div>
-    <script src="data.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
-    <script src="firebase.js" ></script>
+  </div>
   </body>
-  
+  <script src="data.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  <script src="firebase.js" ></script>
 </html>
