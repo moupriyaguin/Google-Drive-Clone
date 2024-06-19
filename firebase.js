@@ -9,6 +9,10 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
+
+const auth = firebase.auth();
+
+
 const firestore = firebase.firestore();
 const uploadsCollection = firestore.collection('uploads');
 
@@ -119,3 +123,67 @@ function deleteFile(docId, url) {
         console.error('Error deleting file from Storage:', error);
     });
 }
+
+
+
+//firebase authentication
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const loginContainer = document.getElementById('login-container');
+    const mainContent = document.getElementById('main-content');
+    const loginButton = document.getElementById('login-button');
+    const profilePicture = document.getElementById('profile');
+  
+    
+    loginButton.addEventListener('click', () => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      provider.setCustomParameters({
+        prompt: 'select_account'  
+      });
+      auth.signInWithPopup(provider)
+        .then(result => {
+          
+          const user = result.user;
+          showMainContent(user);
+        })
+        .catch(error => {
+          console.error('Error during sign in:', error);
+        });
+    });
+  
+   
+    function showMainContent(user) {
+      loginContainer.style.display = 'none';
+      mainContent.style.display = 'block';
+      profilePicture.src = user.photoURL;
+    }
+  
+   
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        showMainContent(user);
+      } else {
+        showLoginScreen();
+      }
+    });
+
+    profilePicture.addEventListener('click', () => {
+      if (confirm('Do you want to log out?')) {
+        auth.signOut()
+          .then(() => {
+        
+            showLoginScreen();
+          })
+          .catch(error => {
+            console.error('Error during sign out:', error);
+          });
+      }
+    });
+
+    function showLoginScreen() {
+      loginContainer.style.display = 'block';
+      mainContent.style.display = 'none';
+    }
+  });
+  
